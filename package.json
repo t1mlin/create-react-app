@@ -1,58 +1,87 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  "name": "react-dev-utils",
+  "version": "11.0.4",
+  "description": "webpack utilities used by Create React App",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/facebook/create-react-app.git",
+    "directory": "packages/react-dev-utils"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/facebook/create-react-app/issues"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "browsersHelper.js",
+    "chalk.js",
+    "checkRequiredFiles.js",
+    "clearConsole.js",
+    "crossSpawn.js",
+    "errorOverlayMiddleware.js",
+    "eslintFormatter.js",
+    "evalSourceMapMiddleware.js",
+    "FileSizeReporter.js",
+    "ForkTsCheckerWebpackPlugin.js",
+    "formatWebpackMessages.js",
+    "getCacheIdentifier.js",
+    "getCSSModuleLocalIdent.js",
+    "getProcessForPort.js",
+    "getPublicUrlOrPath.js",
+    "globby.js",
+    "ignoredFiles.js",
+    "immer.js",
+    "InlineChunkHtmlPlugin.js",
+    "InterpolateHtmlPlugin.js",
+    "launchEditor.js",
+    "launchEditorEndpoint.js",
+    "ModuleNotFoundPlugin.js",
+    "ModuleScopePlugin.js",
+    "noopServiceWorkerMiddleware.js",
+    "openBrowser.js",
+    "openChrome.applescript",
+    "printBuildError.js",
+    "printHostingInstructions.js",
+    "redirectServedPathMiddleware.js",
+    "refreshOverlayInterop.js",
+    "typescriptFormatter.js",
+    "WatchMissingNodeModulesPlugin.js",
+    "WebpackDevServerUtils.js",
+    "webpackHotDevClient.js"
   ],
-  "scripts": {
-    "build": "cd packages/react-scripts && node bin/react-scripts.js build",
-    "changelog": "lerna-changelog",
-    "create-react-app": "node tasks/cra.js",
-    "e2e": "tasks/e2e-simple.sh",
-    "e2e:docker": "tasks/local-test.sh",
-    "postinstall": "cd packages/react-error-overlay/ && yarn build:prod",
-    "publish": "tasks/publish.sh",
-    "start": "cd packages/react-scripts && node bin/react-scripts.js start",
-    "screencast": "node ./tasks/screencast.js",
-    "screencast:error": "svg-term --cast jyu19xGl88FQ3poMY8Hbmfw8y --out screencast-error.svg --window --at 12000 --no-cursor",
-    "alex": "alex .",
-    "test:integration": "jest test/integration",
-    "test": "cd packages/react-scripts && node bin/react-scripts.js test",
-    "format": "prettier --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
-    "compile:lockfile": "node tasks/compile-lockfile.js"
+  "dependencies": {
+    "@babel/code-frame": "^7.10.4",
+    "address": "1.1.2",
+    "browserslist": "4.14.2",
+    "chalk": "2.4.2",
+    "cross-spawn": "7.0.3",
+    "detect-port-alt": "1.1.6",
+    "escape-string-regexp": "2.0.0",
+    "filesize": "6.1.0",
+    "find-up": "4.1.0",
+    "fork-ts-checker-webpack-plugin": "4.1.6",
+    "global-modules": "2.0.0",
+    "globby": "11.0.1",
+    "gzip-size": "5.1.1",
+    "immer": "8.0.4",
+    "is-root": "2.1.0",
+    "loader-utils": "2.0.0",
+    "open": "^7.0.2",
+    "pkg-up": "3.1.0",
+    "prompts": "2.4.0",
+    "react-error-overlay": "^6.0.9",
+    "recursive-readdir": "2.2.2",
+    "shell-quote": "1.7.2",
+    "strip-ansi": "6.0.0",
+    "text-table": "0.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "alex": "^8.2.0",
-    "eslint": "^7.11.0",
-    "execa": "1.0.0",
-    "fs-extra": "^9.0.1",
-    "get-port": "^5.1.1",
-    "globby": "^11.0.1",
-    "husky": "^4.3.0",
-    "jest": "26.6.0",
-    "lerna": "3.22.1",
-    "lerna-changelog": "~0.8.2",
-    "lint-staged": "^10.4.2",
-    "meow": "^6.1.1",
-    "multimatch": "^4.0.0",
-    "prettier": "2.1.2",
-    "puppeteer": "^3.3.0",
-    "strip-ansi": "^6.0.0",
-    "svg-term-cli": "^2.1.1",
-    "tempy": "^0.2.1",
-    "wait-for-localhost": "^3.3.0",
-    "web-vitals": "^1.0.1"
+    "cross-env": "^7.0.2",
+    "jest": "26.6.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,yml,yaml,css,scss,ts,tsx,md}": [
-      "prettier --write"
-    ]
+  "scripts": {
+    "test": "cross-env FORCE_COLOR=true jest"
   }
 }
